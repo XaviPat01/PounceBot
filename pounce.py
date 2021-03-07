@@ -8,13 +8,6 @@ import time
 token = 'ODE3NzQwNTY0MjA3ODk0NTM4.YEN6Pw.-kFFZ2QrvAJ71phHE6YkmfPlTEg'
 bot = commands.Bot(command_prefix='!')
 
-""" allowed = [False,False]
-answered = [False,False]
-countdown = 0
-answers = {}
-#manual input of ids
-channels = ['team-1', 'team-2']
-channel_ids = [817940087206707240, 817940251623555142] """
 allowed=[]
 answered=[]
 text_channel_dict={}
@@ -53,7 +46,7 @@ async def qnreg(ctx):
     global qnset
     attachment_url = ctx.message.attachments[-1].url
     file_request = requests.get(attachment_url)
-    contents=(file_request.text.split("\n"))
+    contents=(file_request.text.split(";;"))
     await ctx.send("Qns registered")
     qnset=contents
     # print(qnset)
