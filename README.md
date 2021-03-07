@@ -1,7 +1,7 @@
 # Quiz Bots
-__Discord Quiz Pounce Bot__
+* __Discord Quiz Pounce Bot__
 
-__Discord Quiz Buzzer Bot__
+* __Discord Quiz Buzzer__
 
 **_For the Quizzers by the Quizzers_**
 
