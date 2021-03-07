@@ -60,7 +60,7 @@ async def qnreg(ctx):
 
 # Function which the QM would use to send a particular question to every team channel
 
-@bot.command(name="send",help="To send the question to every team channel, !show [question number]")
+@bot.command(name="send",help="To send the question to every team channel, !send [question number]")
 @commands.has_role('QM')
 async def qnshow(ctx,qno):
     for id in channel_ids:
