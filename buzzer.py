@@ -32,10 +32,10 @@ async def trial(ctx, arg):
 
     messages =[]
     for id in channel_ids:
-        messages.append(await bot.get_channel(id).send(int(countdown)))
+        messages.append(await bot.get_channel(id).send(min([(countdown//5+1)*5,int(arg)])))
     #message = await bot.get_channel(817940087206707240).send(countdown)
     #print(type(message))
-    while countdown > 1:
+    while countdown > 0:
         countdown = int(arg) - (time.time() - t1)
         print(countdown, answered, allowed)
         if answered == True:
@@ -46,10 +46,10 @@ async def trial(ctx, arg):
             break
         else:
             for message in messages:
-                await message.edit(content=int(countdown))
+                await message.edit(content=(int(countdown)//5+1)*5)
     else:
-        for id in channel_ids:
-            await bot.get_channel(id).send('TimeUp')
+        for message in messages:
+            await message.edit(content='TimeUp')
         allowed = False
         countdown = int(arg)
         answered = False
