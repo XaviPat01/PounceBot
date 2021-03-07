@@ -35,7 +35,7 @@ async def trial(ctx, arg):
         messages.append(await bot.get_channel(id).send(min([(countdown//5+1)*5,int(arg)])))
     #message = await bot.get_channel(817940087206707240).send(countdown)
     #print(type(message))
-    while countdown > 0:
+    while countdown > 1:
         countdown = int(arg) - (time.time() - t1)
         print(countdown, answered, allowed)
         if answered == True:
