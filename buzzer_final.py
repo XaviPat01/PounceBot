@@ -39,7 +39,7 @@ async def get_channel_ids(ctx):
 
 # Function to add the .txt file containing questions to be displayed on discord
 qnset=[]
-@bot.command(name="questions",help="To add the .txt file containing qns to be displayed on discord")
+@bot.command(name="bquestions",help="To add the .txt file containing qns to be displayed on discord")
 @commands.has_role("QM")
 async def qnreg(ctx): #registering the questions from the uploaded .txt file
     global qnset
@@ -52,7 +52,7 @@ async def qnreg(ctx): #registering the questions from the uploaded .txt file
 
 # Function which the QM would use to send a particular question to every team channel
     
-@bot.command(name="show",help="To send the question to every team channel, !show [question number]")
+@bot.command(name="bsend",help="To send the question to every team channel, !bsend [question number]")
 @commands.has_role('QM')
 async def qnshow(ctx,qno):
     for id in channel_ids:
@@ -60,7 +60,7 @@ async def qnshow(ctx,qno):
 
 # Function to start buzzer timer
         
-@bot.command(name='start',help="Start the timer !start [time(in seconds)]")
+@bot.command(name='bstart',help="Start the timer !bstart [time(in seconds)]")
 @commands.has_role('QM')
 async def trial(ctx, arg):
     global allowed
@@ -85,7 +85,7 @@ async def trial(ctx, arg):
             allowed = False
             answered = False
             # print("Answer received.")
-            await ctx.send("Buzzer closed. A team has answered. Enter !fetch")
+            await ctx.send("Buzzer closed. A team has answered. Enter !bfetch")
             break
         else:
             for message in messages:
@@ -115,7 +115,7 @@ async def answer(ctx):
 
 # Function using which QM can see the answer of the team who buzzed first
         
-@bot.command(name='fetch', help="To see the answer of the team who buzzed first")
+@bot.command(name='bfetch', help="To see the answer of the team who buzzed first")
 @commands.has_role('QM')
 async def fetch_answers(ctx):
     global answers
