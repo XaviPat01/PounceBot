@@ -75,7 +75,7 @@ async def fetch_answers(ctx):
     for i in answers.keys():
         message = message + i + '        ' + answers[i] + '\n'
     if message == '':
-        await ctx.send("No team pounced")
+        await ctx.send("No team answered")
     else:
         await ctx.send(message)
 
