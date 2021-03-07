@@ -31,7 +31,7 @@ async def trial(ctx, arg):
         messages.append(await bot.get_channel(id).send(min([(countdown//5+1)*5,int(arg)])))
     count_1=0
     count_2=0
-    while countdown > 0:
+    while countdown > 1:
         countdown = int(arg) - (time.time() - t1)
 
         if answered[0] == True and count_1==0:
