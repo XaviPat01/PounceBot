@@ -12,20 +12,22 @@ allowed = True
 countdown = 0
 answered = False
 answers = {}
-#manual input of ids
-channels = ['team-1', 'team-2']
-#temporary
-@bot.command(name='id')
+
+#----------------
+text_channel_dict={}
+channel_ids=[]
+@bot.command(name='new')
 async def get_channel_ids(ctx):
+    global text_channel_dict
+    global channel_ids
     text_channel_dict = {}
     for guild in bot.guilds:
         for channel in guild.text_channels:
             if 'team' in channel.name.lower():
                 text_channel_dict[channel.name] = channel.id
-    print(text_channel_dict)
-
-
-channel_ids = [817940087206707240, 817940251623555142]
+    print(text_channel_dict.values())
+    channel_ids = text_channel_dict.values()
+#-----------------
 
 
 @bot.command(name='start')
