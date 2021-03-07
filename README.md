@@ -18,7 +18,7 @@ NOTE: Currently runs on one server at a time. It can be modified to run on multi
 
 ### Bot 1 : Pounce Bot
 
-A bot to help quizmasters automate the process of pounce and answer compilation
+A bot to help quizmasters automate the process of pounce and answer compilation in online quizzes
 
 #### Commands
 | QM Commands  | Description |
@@ -34,4 +34,24 @@ A bot to help quizmasters automate the process of pounce and answer compilation
 | ------- | ----------- |
 | !help | Get help regarding commands |
 | !ans | Answer the question |
+
+### Bot 2 : Buzzer
+
+A bot to automate the buzzer functionality in online quizzes
+
+#### Commands
+| QM Commands  | Description |
+| ------- | ----------- |
+| !help | Get help regarding commands |
+| !questions [.txt attachment] | To add the txt file containing ';;' separated questions |
+| !new | Establish connections to all teams |
+| !show [Question Number] | Send the question to all team channels |
+| !start [Time in seconds] | Send a countdown timer to all team channels |
+| !fetch | Fetches the answers from all teams and displays to Quizmaster |
+
+| Player Commands  | Description |
+| ------- | ----------- |
+| !help | Get help regarding commands |
+| !ans | Answer the question |
+
   
