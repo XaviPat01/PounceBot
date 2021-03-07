@@ -16,7 +16,7 @@ answered = False
 answers = {}
 
 #----------------
-#function to get the channel ids of team text channels from the discord server
+# Function to get the channel ids of team text channels from the discord server
 
 text_channel_dict={}
 channel_ids=[]
@@ -35,7 +35,7 @@ async def get_channel_ids(ctx):
     channel_ids = list(text_channel_dict.values())
     print(channel_ids)
 #-----------------
-#function to add the .txt file containing questions to be displayed on discord
+# Function to add the .txt file containing questions to be displayed on discord
 qnset=[]
 @bot.command(name="questions",help="To add the .txt file containing qns to be displayed on discord")
 @commands.has_role("Test_QM")
@@ -52,7 +52,7 @@ async def qnreg(ctx):
         qndisplay=f'Q{i+1}\n{contents[i]}'
         await ctx.send(qndisplay) """
 
-#function which the QM would use to send a particular question to every team channel
+# Function which the QM would use to send a particular question to every team channel
     
 @bot.command(name="show",help="To send the question to every team channel, !show [question number]")
 @commands.has_role('Test_QM')
@@ -60,7 +60,7 @@ async def qnshow(ctx,qno):
     for id in channel_ids:
         await bot.get_channel(id).send(qnset[int(qno)-1])
 
-#Function to start buzzer timer
+# Function to start buzzer timer
         
 @bot.command(name='start',help="Start the timer !start [time(in seconds)]")
 @commands.has_role('Test_QM')
@@ -87,7 +87,7 @@ async def trial(ctx, arg):
             allowed = False
             countdown = int(arg)
             answered = False
-            print("Answer received.")
+            # print("Answer received.")
             await ctx.send("Buzzer closed. A team has answered. Enter !fetch")
             break
         else:
