@@ -18,7 +18,7 @@ answers = {}
 #----------------
 text_channel_dict={}
 channel_ids=[]
-@bot.command(name='new')
+@bot.command(name='new',help="Initialize the connections to the team channels")
 @commands.has_role("Test_QM")
 async def get_channel_ids(ctx):
     global text_channel_dict
