@@ -100,7 +100,7 @@ async def trial(ctx, arg):
 
 #Function using which teams can send their answer
 
-@bot.command(name='ans', help="Write your answer by mentioning !ans and then your answer")
+@bot.command(name='buzz', help="Write your answer by mentioning !buzz and then your answer")
 async def answer(ctx):
     global allowed
     global answered
