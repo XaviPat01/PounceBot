@@ -1,6 +1,8 @@
 from discord.ext import commands
 from discord import embeds
 import asyncio
+import time
+
 #change token
 token = 'ODE3NzQwMjEyMzQ4MTI1Mjc0.YEN56w.GbX1VzaBWZo-KkoDnBsdRlDXGLg'
 
@@ -26,12 +28,15 @@ async def trial(ctx, arg):
     allowed = True
     answered = False
     countdown = int(arg)
+    t1 = time.time()
+
     messages =[]
     for id in channel_ids:
-        messages.append(await bot.get_channel(id).send(countdown))
+        messages.append(await bot.get_channel(id).send(int(countdown)))
     #message = await bot.get_channel(817940087206707240).send(countdown)
     #print(type(message))
     while countdown > 1:
+        countdown = int(arg) - (time.time() - t1)
         print(countdown, answered, allowed)
         if answered == True:
             allowed = False
@@ -40,10 +45,8 @@ async def trial(ctx, arg):
             print("Answer received.")
             break
         else:
-            await asyncio.sleep(0.9)
-            countdown -= 1
             for message in messages:
-                await message.edit(content=countdown)
+                await message.edit(content=int(countdown))
     else:
         for id in channel_ids:
             await bot.get_channel(id).send('TimeUp')
@@ -81,4 +84,5 @@ async def fetch_answers(ctx):
 
 
 bot.run(token)
+
 
