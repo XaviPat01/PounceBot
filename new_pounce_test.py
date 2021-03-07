@@ -36,9 +36,9 @@ async def get_channel_ids(ctx):
             if 'team' in channel.name.lower():
                 text_channel_dict[channel.name] = channel.id
     channel_ids = list(text_channel_dict.values())
-    print(channel_ids)
+    # print(channel_ids)
     numteams=len(channel_ids)
-    print(numteams)
+    # print(numteams)
     await ctx.send('Connections with teams established')
     answered =[False]*numteams
     allowed=[False]*numteams
@@ -123,7 +123,7 @@ async def fetch_answers(ctx):
     global answers
     message = ''
     for i in answers.keys():
-        message = message + i + '        ' + answers[i] + '\n'
+        message = message + i + '\t\t' + answers[i] + '\n'
     if message == '':
         await ctx.send("No team pounced")
     else:
