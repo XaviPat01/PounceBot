@@ -53,7 +53,7 @@ async def qnreg(ctx):
 
 # Function which the QM would use to send a particular question to every team channel
 
-@bot.command(name="psend",help="To send the question to every team channel, !send [question number]")
+@bot.command(name="psend",help="To send the question to every team channel, !psend [question number]")
 @commands.has_role('QM')
 async def qnshow(ctx,qno):
     for id in channel_ids:
@@ -61,7 +61,7 @@ async def qnshow(ctx,qno):
 
 # Function to start buzzer timer
         
-@bot.command(name='pstart',help="Start the timer !start [time(in seconds)]")
+@bot.command(name='pstart',help="Start the timer !pstart [time(in seconds)]")
 @commands.has_role('QM')
 async def trial(ctx, arg):
     global allowed
