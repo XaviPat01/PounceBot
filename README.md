@@ -1,10 +1,13 @@
-# PounceBot
-Discord Quiz Pounce Bot
-Discord Quiz Buzzer Bot
+# Quiz Bots
+* __Discord Quiz Pounce Bot__
 
-*For the Quizzers by the Quizzers*
+* __Discord Quiz Buzzer__
 
-NOTE: Currently runs on one server at a time. It can be modified to run on multiple servers in future.
+**_For the Quizzers by the Quizzers_**
+
+_NOTE: Currently runs on one server at a time. It can be modified to run on multiple servers in future._
+
+---
 
 #### Made By:
 
@@ -13,6 +16,8 @@ NOTE: Currently runs on one server at a time. It can be modified to run on multi
 * Nikhil Gupta 2020CH10105
 
 * Vaibhav Agarwal 2020CS50447
+
+---
 
 ## Bot Description
 
@@ -24,7 +29,7 @@ A bot to help quizmasters automate the process of pounce and answer compilation 
 | QM Commands  | Description |
 | ------- | ----------- |
 | !help | Get help regarding commands |
-| !question [.txt attachment] | To add the txt file containing ';;' separated questions |
+| !questions [.txt attachment] | To add the txt file containing ';;' separated questions |
 | !new | Establish connections to all teams |
 | !send [Question Number] | Send the question to all team channels |
 | !start [Time in seconds] | Send a countdown timer to all team channels |
