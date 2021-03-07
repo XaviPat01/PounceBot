@@ -83,7 +83,6 @@ async def trial(ctx, arg):
         print(countdown, answered, allowed)
         if answered == True:
             allowed = False
-            countdown = int(arg)
             answered = False
             # print("Answer received.")
             await ctx.send("Buzzer closed. A team has answered. Enter !fetch")
