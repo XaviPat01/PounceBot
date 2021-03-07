@@ -1,4 +1,4 @@
-# PounceBot
+# Quiz Bots
 Discord Quiz Pounce Bot
 Discord Quiz Buzzer Bot
 
