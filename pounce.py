@@ -5,7 +5,7 @@ import asyncio
 import time
 
 #change token
-token = 'ODE3NzQ3MjMwODM5Nzk5ODA4.YEOAdA.tBU1Hmr9tZkPsBSkFrmCNylpF8o'
+token = 'ODE3NzQwNTY0MjA3ODk0NTM4.YEN6Pw.-kFFZ2QrvAJ71phHE6YkmfPlTEg'
 bot = commands.Bot(command_prefix='!')
 
 """ allowed = [False,False]
