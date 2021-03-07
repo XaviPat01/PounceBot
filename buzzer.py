@@ -34,7 +34,7 @@ async def get_channel_ids(ctx):
     await ctx.send('Connections with teams established')
     # print(text_channel_dict.values())
     channel_ids = list(text_channel_dict.values())
-    print(channel_ids)
+    # print(channel_ids)
 #-----------------
 
 # Function to add the .txt file containing questions to be displayed on discord
@@ -80,7 +80,7 @@ async def trial(ctx, arg):
     #print(type(message))
     while countdown > 1:
         countdown = int(arg) - (time.time() - t1)
-        print(countdown, answered, allowed)
+        # print(countdown, answered, allowed)
         if answered == True:
             allowed = False
             answered = False
