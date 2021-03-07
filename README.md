@@ -13,3 +13,5 @@ Discord Quiz Buzzer Bot
 * Vaibhav Agarwal 2020CS50447
 
 ## Bot Description
+
+Lorem Ipsum
