@@ -22,6 +22,8 @@ channel_ids=[]
 qnset=[]
 numteams=0
 
+#function to get the channel ids of team text channels from the discord server
+
 @bot.command(name='new', help="Initialize the connections to the team channels")
 @commands.has_role("Test_QM")
 async def get_channel_ids(ctx):
@@ -43,6 +45,7 @@ async def get_channel_ids(ctx):
     answered =[False]*numteams
     allowed=[False]*numteams
 
+#function to add the .txt file containing questions to be displayed on discord
 
 @bot.command(name="questions",help="To add the .txt file containing qns to be displayed on discord")
 @commands.has_role("Test_QM")
@@ -55,6 +58,7 @@ async def qnreg(ctx):
     qnset=contents
     # print(qnset)
 
+#function which the QM would use to send a particular question to every team channel
 
 @bot.command(name="show",help="To send the question to every team channel, !show [question number]")
 @commands.has_role('Test_QM')
@@ -62,7 +66,8 @@ async def qnshow(ctx,qno):
     for id in channel_ids:
         await bot.get_channel(id).send(qnset[int(qno)-1])
 
-
+#Function to start buzzer timer
+        
 @bot.command(name='start',help="Start the timer !start [time(in seconds)]")
 @commands.has_role('Test_QM')
 async def trial(ctx, arg):
@@ -79,7 +84,7 @@ async def trial(ctx, arg):
     messages =[]
     for id in channel_ids:
         print(id)
-        messages.append(await bot.get_channel(id).send(min([(countdown//5+1)*5,int(arg)])))
+        messages.append(await bot.get_channel(id).send(min([(countdown//5+1)*5,int(arg)])))         #Time left will decrease by intervals of 5
     
     count=[0]*numteams
 
@@ -102,6 +107,8 @@ async def trial(ctx, arg):
         countdown = int(arg)
         answered = [False]*numteams
 
+#Function using which teams can send their answer
+        
 @bot.command(name='ans', help="Write your pounce answer by mentioning !ans and then your answer")
 async def answer(ctx):
     global allowed
@@ -116,6 +123,8 @@ async def answer(ctx):
         allowed[index] = False
     else:
         await ctx.message.reply('Pounce closed')
+
+#function using which QM can see the pounce answers of each team
 
 @bot.command(name='fetch', help="To see the pounce answers of each team.")
 @commands.has_role('Test_QM')
