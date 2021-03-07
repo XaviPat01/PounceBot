@@ -20,8 +20,9 @@ answers = {}
 
 text_channel_dict={}
 channel_ids=[]
+
 @bot.command(name='new',help="Initialize the connections to the team channels")
-@commands.has_role("Test_QM")
+@commands.has_role("QM")
 async def get_channel_ids(ctx):
     global text_channel_dict
     global channel_ids
@@ -35,27 +36,24 @@ async def get_channel_ids(ctx):
     channel_ids = list(text_channel_dict.values())
     print(channel_ids)
 #-----------------
+
 # Function to add the .txt file containing questions to be displayed on discord
 qnset=[]
 @bot.command(name="questions",help="To add the .txt file containing qns to be displayed on discord")
-@commands.has_role("Test_QM")
-async def qnreg(ctx):
+@commands.has_role("QM")
+async def qnreg(ctx): #registering the questions from the uploaded .txt file
     global qnset
     attachment_url = ctx.message.attachments[-1].url
     file_request = requests.get(attachment_url)
     contents=(file_request.text.split("\n"))
     await ctx.send("Qns registered")
     qnset=contents
-    print(qnset)
-
-    """ for i in range(0,len(contents)):
-        qndisplay=f'Q{i+1}\n{contents[i]}'
-        await ctx.send(qndisplay) """
+    # print(qnset)
 
 # Function which the QM would use to send a particular question to every team channel
     
 @bot.command(name="show",help="To send the question to every team channel, !show [question number]")
-@commands.has_role('Test_QM')
+@commands.has_role('QM')
 async def qnshow(ctx,qno):
     for id in channel_ids:
         await bot.get_channel(id).send(qnset[int(qno)-1])
@@ -63,7 +61,7 @@ async def qnshow(ctx,qno):
 # Function to start buzzer timer
         
 @bot.command(name='start',help="Start the timer !start [time(in seconds)]")
-@commands.has_role('Test_QM')
+@commands.has_role('QM')
 async def trial(ctx, arg):
     global allowed
     global countdown
@@ -116,20 +114,19 @@ async def answer(ctx):
     else:
         await ctx.message.reply('Buzzer closed')
 
-#function using which QM can see the answer of the team who buzzed first
+# Function using which QM can see the answer of the team who buzzed first
         
 @bot.command(name='fetch', help="To see the answer of the team who buzzed first")
-@commands.has_role('Test_QM')
+@commands.has_role('QM')
 async def fetch_answers(ctx):
     global answers
     message = ''
     for i in answers.keys():
-        message = message + i + '        ' + answers[i] + '\n'
+        message = message + i + '\t\t' + answers[i] + '\n'
     if message == '':
         await ctx.send("No team answered")
     else:
         await ctx.send(message)
-
 
 bot.run(token)
 
