@@ -29,16 +29,16 @@ A bot to help quizmasters automate the process of pounce and answer compilation 
 | QM Commands  | Description |
 | ------- | ----------- |
 | !help | Get help regarding commands |
-| !questions [.txt attachment] | To add the txt file containing ';;' separated questions |
+| !pquestions [.txt attachment] | To add the txt file containing ';;' separated questions |
 | !new | Establish connections to all teams |
-| !send [Question Number] | Send the question to all team channels |
-| !start [Time in seconds] | Send a countdown timer to all team channels |
-| !fetch | Fetches the answers from all teams and displays to Quizmaster |
+| !psend [Question Number] | Send the question to all team channels |
+| !pstart [Time in seconds] | Send a countdown timer to all team channels |
+| !pfetch | Fetches the answers from all teams and displays to Quizmaster |
 
 | Player Commands  | Description |
 | ------- | ----------- |
 | !help | Get help regarding commands |
-| !ans | Answer the question |
+| !ans [Your answer] | Answer the question |
 
 ### Bot 2 : Buzzer
 
@@ -48,15 +48,18 @@ A bot to automate the buzzer functionality in online quizzes
 | QM Commands  | Description |
 | ------- | ----------- |
 | !help | Get help regarding commands |
-| !questions [.txt attachment] | To add the txt file containing ';;' separated questions |
+| !bquestions [.txt attachment] | To add the txt file containing ';;' separated questions |
 | !new | Establish connections to all teams |
-| !show [Question Number] | Send the question to all team channels |
-| !start [Time in seconds] | Send a countdown timer to all team channels |
-| !fetch | Fetches the answers from all teams and displays to Quizmaster |
+| !bsend [Question Number] | Send the question to all team channels |
+| !bstart [Time in seconds] | Send a countdown timer to all team channels |
+| !bfetch | Fetches the answers from all teams and displays to Quizmaster |
 
 | Player Commands  | Description |
 | ------- | ----------- |
 | !help | Get help regarding commands |
-| !ans | Answer the question |
+| !buzz [Your answer] | Answer the question |
 
-  
+### Dependencies
+Use command _pip install -r requirements.txt_ to install dependencies
+
+### _Quiz on_
