@@ -6,7 +6,7 @@ import requests
 import time
 
 #change token
-token = 'ODE3NzQ3MjMwODM5Nzk5ODA4.YEOAdA.tBU1Hmr9tZkPsBSkFrmCNylpF8o'
+token = 'ODE4MTE5NTY1NTY4NzcwMDQ4.YETbOA.rh5Zf2dNqgas4wnDzDdEFbdUejU'
 
 bot = commands.Bot(command_prefix='!')
 
