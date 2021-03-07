@@ -83,7 +83,7 @@ async def trial(ctx, arg):
     t1 = time.time()
     messages =[]
     for id in channel_ids:
-        print(id)
+        # print(id)
         messages.append(await bot.get_channel(id).send(min([(countdown//5+1)*5,int(arg)])))         #Time left will decrease by intervals of 5
     
     count=[0]*numteams
