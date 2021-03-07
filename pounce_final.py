@@ -40,7 +40,7 @@ async def get_channel_ids(ctx):
 
 # Function to add the .txt file containing questions to be displayed on discord
 
-@bot.command(name="questions",help="To add the .txt file containing qns to be displayed on discord")
+@bot.command(name="pquestions",help="To add the .txt file containing qns to be displayed on discord")
 @commands.has_role("QM")
 async def qnreg(ctx):
     global qnset
@@ -53,7 +53,7 @@ async def qnreg(ctx):
 
 # Function which the QM would use to send a particular question to every team channel
 
-@bot.command(name="send",help="To send the question to every team channel, !send [question number]")
+@bot.command(name="psend",help="To send the question to every team channel, !send [question number]")
 @commands.has_role('QM')
 async def qnshow(ctx,qno):
     for id in channel_ids:
@@ -61,7 +61,7 @@ async def qnshow(ctx,qno):
 
 # Function to start buzzer timer
         
-@bot.command(name='start',help="Start the timer !start [time(in seconds)]")
+@bot.command(name='pstart',help="Start the timer !start [time(in seconds)]")
 @commands.has_role('QM')
 async def trial(ctx, arg):
     global allowed
@@ -120,7 +120,7 @@ async def answer(ctx):
 
 # Function using which QM can see the pounce answers of each team
 
-@bot.command(name='fetch', help="To see the pounce answers of each team.")
+@bot.command(name='pfetch', help="To see the pounce answers of each team.")
 @commands.has_role('QM')
 async def fetch_answers(ctx):
     global answers
