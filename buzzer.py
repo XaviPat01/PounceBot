@@ -16,7 +16,7 @@ answered = False
 answers = {}
 
 #----------------
-# Function to get the channel ids of team text channels from the discord server
+#function to get the channel ids of team text channels from the discord server
 
 text_channel_dict={}
 channel_ids=[]
@@ -35,7 +35,7 @@ async def get_channel_ids(ctx):
     channel_ids = list(text_channel_dict.values())
     print(channel_ids)
 #-----------------
-
+#function to add the .txt file containing questions to be displayed on discord
 qnset=[]
 @bot.command(name="questions",help="To add the .txt file containing qns to be displayed on discord")
 @commands.has_role("Test_QM")
@@ -52,7 +52,8 @@ async def qnreg(ctx):
         qndisplay=f'Q{i+1}\n{contents[i]}'
         await ctx.send(qndisplay) """
 
-
+#function which the QM would use to send a particular question to every team channel
+    
 @bot.command(name="show",help="To send the question to every team channel, !show [question number]")
 @commands.has_role('Test_QM')
 async def qnshow(ctx,qno):
@@ -115,7 +116,8 @@ async def answer(ctx):
     else:
         await ctx.message.reply('Buzzer closed')
 
-
+#function using which QM can see the answer of the team who buzzed first
+        
 @bot.command(name='fetch', help="To see the answer of the team who buzzed first")
 @commands.has_role('Test_QM')
 async def fetch_answers(ctx):
