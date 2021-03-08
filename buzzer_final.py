@@ -6,7 +6,7 @@ import requests
 import time
 
 #change token
-token = 'ODE4MTE5NTY1NTY4NzcwMDQ4.YETbOA.rh5Zf2dNqgas4wnDzDdEFbdUejU'
+token = 'ODE4MTE5NTY1NTY4NzcwMDQ4.YETbOA.h6tgfcvYjSr79lQ3LWWRIbsQPhc'
 
 bot = commands.Bot(command_prefix='!')
 
@@ -45,7 +45,7 @@ async def qnreg(ctx): #registering the questions from the uploaded .txt file
     global qnset
     attachment_url = ctx.message.attachments[-1].url
     file_request = requests.get(attachment_url)
-    contents=(file_request.text.split("\n"))
+    contents=(file_request.text.split(";;"))
     await ctx.send("Qns registered")
     qnset=contents
     # print(qnset)
@@ -86,6 +86,8 @@ async def trial(ctx, arg):
             answered = False
             # print("Answer received.")
             await ctx.send("Buzzer closed. A team has answered. Enter !bfetch")
+            for message in messages:
+                await(message.reply(content="Buzzer closed."))
             break
         else:
             for message in messages:
