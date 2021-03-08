@@ -1,7 +1,7 @@
 # Quiz Bots
-* __Discord Quiz Pounce Bot__
+* __Discord Quiz Pounce Bot__ : __Script file -__ _pounce_final.py_
 
-* __Discord Quiz Buzzer__
+* __Discord Quiz Buzzer__ : __Script file -__ _buzzer_final.py_
 
 **_For the Quizzers by the Quizzers_**
 
