@@ -5,7 +5,7 @@ import asyncio
 import time
 
 #change token
-token = 'ODE3NzQwNTY0MjA3ODk0NTM4.YEN6Pw.-kFFZ2QrvAJ71phHE6YkmfPlTEg'
+token = 'ODE3NzQwNTY0MjA3ODk0NTM4.YEN6Pw.v8gPO_cNqfCA5ci24WNLGD5hGlk'
 bot = commands.Bot(command_prefix='!')
 
 allowed=[]
@@ -81,7 +81,7 @@ async def trial(ctx, arg):
     
     count=[0]*numteams
 
-    while countdown > 1:
+    while countdown > 5:
         countdown = int(arg) - (time.time() - t1)
         for i in range(0,numteams):
             if answered[i] == True and count[i]==0:
